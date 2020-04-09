@@ -30,7 +30,9 @@ Add you SSH Key
     $ mkvirtualenv -p $(which python) chat-api
     $ workon chat-api
 
-Or using pyen virtualenv
+Or using pyenv virtualenv
+
+.. code-block:: shell
 
     $ git clone git@github.com:rhenter/stream-chat-api.git
     $ cd stream-chat-api
