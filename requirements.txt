@@ -1,0 +1,9 @@
+dj-database-url
+dj-static
+django
+django-cors-headers
+djangorestframework
+djoser
+ipython
+prettyconf
+stream-chat
