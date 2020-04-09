@@ -9,14 +9,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'y*v98@f#j!o9cnrveps4kr36o5s7wlv--rhd=l0rz*x!a^g+03'
-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config("DEBUG", default=False, cast=config.boolean)
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='*', cast=config.list)
+SECRET_KEY = config(
+    'SECRET_KEY',
+    default='example-kn59*npHxq)G#p7VkwfZCb)RgtUWaJjfDBrEYJ6fEk9Sj$(d)Q#uZ6U##'
+)
 # Application definition
 
 INSTALLED_APPS = [
@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'mychat.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 # Database
-default_dburl = 'sqlite:///{}/db.sqlite3'.format(os.path.join(BASE_DIR, 'db.sqlite3'))
+default_dburl = 'sqlite:///{}'.format(os.path.join(BASE_DIR, 'db.sqlite3'))
 DATABASES = {
     'default': config(
         'DATABASE_URL',
